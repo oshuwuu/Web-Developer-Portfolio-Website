@@ -1,4 +1,5 @@
 const doc = document.documentElement;
+doc.classList.add('js');
 const themeToggle = document.getElementById('themeToggle');
 const themeText = document.querySelector('.theme-text');
 const loadingScreen = document.getElementById('loadingScreen');
@@ -37,12 +38,18 @@ menuToggle?.addEventListener('click', () => {
 
 // reveal animations
 const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('in');
-  });
-}, { threshold: .15 });
-revealEls.forEach((el) => io.observe(el));
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  revealEls.forEach((el) => io.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('in'));
+}
 
 // magnetic buttons
 for (const el of document.querySelectorAll('.magnetic')) {
@@ -120,17 +127,6 @@ dropZone?.addEventListener('drop', (e) => {
 // GSAP motion
 if (window.gsap) {
   gsap.from('.hero-inner > *', { y: 18, opacity: 0, duration: .7, stagger: .08, ease: 'power2.out', delay: .2 });
-  if (window.ScrollTrigger) {
-    gsap.utils.toArray('.section').forEach((section) => {
-      gsap.from(section, {
-        opacity: 0.96,
-        y: 20,
-        duration: .7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: section, start: 'top 82%' }
-      });
-    });
-  }
 }
 
 // Three.js hero
