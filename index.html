@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AstraForge Portfolio — Next‑Gen WordPress Developer Experience</title>
+  <meta name="description" content="A premium interactive WordPress developer portfolio concept with 3D storytelling, advanced motion, dual light/dark themes, SEO-first architecture, and Core Web Vitals optimization." />
+  <meta name="theme-color" content="#0a1020" />
+  <meta property="og:title" content="AstraForge Portfolio Concept" />
+  <meta property="og:description" content="Immersive and conversion-focused portfolio concept built with HTML, CSS, JS, GSAP, and Three.js." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Clash+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Your Name",
+        "jobTitle": "WordPress Developer",
+        "url": "https://example.com",
+        "sameAs": ["https://github.com/", "https://www.linkedin.com/"],
+        "knowsAbout": ["WordPress", "Gutenberg", "Three.js", "GSAP", "SEO", "Performance Optimization"]
+      },
+      {
+        "@type": "WebSite",
+        "name": "AstraForge Portfolio",
+        "url": "https://example.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://example.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+    <div class="loading-mark"></div>
+    <p>Composing immersive layers…</p>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#hero">Astra<span>Forge</span></a>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav" id="menuToggle">Menu</button>
+
+    <nav id="mainNav" aria-label="Primary Navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#playground">Playground</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme">
+      <span class="track"><span class="dot"></span></span>
+      <span class="theme-text">Dark</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="section hero" aria-labelledby="hero-title">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow">WordPress Engineer • 3D Interaction Director • SEO Strategist</p>
+        <h1 id="hero-title">I build portfolio websites that feel like digital worlds — and rank like growth engines.</h1>
+        <p class="lead">Custom WordPress experiences blending cinematic 3D, playful motion, and conversion architecture — optimized for Core Web Vitals, accessibility, and long-term scalability.</p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary magnetic">Explore Signature Work</a>
+          <a href="#contact" class="btn btn-outline magnetic">Start a Premium Build</a>
+        </div>
+
+        <ul class="hero-stats" aria-label="Core highlights">
+          <li><strong>90+</strong><span>Lighthouse targets</span></li>
+          <li><strong>3D-first</strong><span>Brand storytelling</span></li>
+          <li><strong>SEO native</strong><span>Schema + content architecture</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section container reveal" aria-labelledby="about-title">
+      <h2 id="about-title">About the Studio Approach</h2>
+      <p class="section-intro">I combine product thinking, motion design, and WordPress engineering to craft websites that feel handcrafted, perform fast, and convert visitors into conversations.</p>
+      <div class="grid three">
+        <article class="card tilt-card"><h3>Creative Systems</h3><p>Brand-led visual grammar with reusable tokens and component logic.</p></article>
+        <article class="card tilt-card"><h3>Technical Depth</h3><p>Custom blocks, semantic templates, structured content, and scalable code.</p></article>
+        <article class="card tilt-card"><h3>Growth Mindset</h3><p>Every section maps to intent, trust-building, and conversion momentum.</p></article>
+      </div>
+    </section>
+
+    <section id="services" class="section container reveal" aria-labelledby="services-title">
+      <h2 id="services-title">Services</h2>
+      <div class="grid three">
+        <article class="card service-card"><h3>WordPress Architecture</h3><p>Custom block theme, CPT systems, editorial governance, deployment hygiene.</p></article>
+        <article class="card service-card"><h3>Interactive Motion & 3D</h3><p>Real-time hero scenes, responsive motion choreography, tactile UI behaviors.</p></article>
+        <article class="card service-card"><h3>SEO & Performance Ops</h3><p>Schema strategy, entity-based linking, media optimization, CWV tuning loops.</p></article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container reveal" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills Galaxy</h2>
+      <p class="section-intro">Hover each token to spotlight proficiency clusters.</p>
+      <div class="skills-cloud">
+        <button>WordPress</button><button>Gutenberg</button><button>ACF</button><button>PHP</button>
+        <button>Three.js</button><button>GSAP</button><button>TypeScript</button><button>Technical SEO</button>
+        <button>Accessibility</button><button>Core Web Vitals</button><button>Figma</button><button>Motion Systems</button>
+      </div>
+    </section>
+
+    <section id="projects" class="section container reveal" aria-labelledby="projects-title">
+      <h2 id="projects-title">Portfolio Projects</h2>
+      <div class="filter-row" role="toolbar" aria-label="Project filters">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="wordpress">WordPress</button>
+        <button class="chip" data-filter="3d">3D</button>
+        <button class="chip" data-filter="seo">SEO</button>
+      </div>
+
+      <div class="grid three" id="projectGrid">
+        <article class="card project tilt-card" data-tag="wordpress 3d"><h3>Immersive Studio Platform</h3><p>3D hero + modular CMS controls for campaign agility.</p></article>
+        <article class="card project tilt-card" data-tag="wordpress seo"><h3>Luxury Commerce Narrative</h3><p>Entity-driven architecture, rich snippets, and editorial funnels.</p></article>
+        <article class="card project tilt-card" data-tag="3d seo"><h3>SaaS Story Engine</h3><p>Scroll-based scenes engineered for conversion and performance.</p></article>
+      </div>
+    </section>
+
+    <section id="case-studies" class="section container reveal" aria-labelledby="case-title">
+      <h2 id="case-title">Case Study Snapshot</h2>
+      <div class="before-after card">
+        <div>
+          <h3>Before</h3>
+          <p>Template look, weak differentiation, low organic discoverability.</p>
+        </div>
+        <div>
+          <h3>After</h3>
+          <p>Distinctive 3D identity, higher engagement depth, stronger qualified leads.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section container reveal" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">Testimonials</h2>
+      <div class="testimonial-stage card" id="testimonialStage">
+        <blockquote class="quote is-active">“The site feels like an interactive brand experience, not a portfolio. Our conversion quality changed immediately.” <cite>— Creative Agency Founder</cite></blockquote>
+        <blockquote class="quote">“Best blend of artistic direction and technical SEO implementation I’ve seen in WordPress.” <cite>— SaaS Marketing Lead</cite></blockquote>
+        <blockquote class="quote">“The motion feels premium and intentional, yet performance remained excellent.” <cite>— Product Director</cite></blockquote>
+        <div class="dots" id="testimonialDots"></div>
+      </div>
+    </section>
+
+    <section id="process" class="section container reveal" aria-labelledby="process-title">
+      <h2 id="process-title">Process</h2>
+      <ol class="timeline" aria-label="Delivery process timeline">
+        <li><strong>Discover</strong><span>Audience, positioning, conversion goals, content audit.</span></li>
+        <li><strong>Design</strong><span>Visual system, interaction map, and experience prototyping.</span></li>
+        <li><strong>Build</strong><span>Custom WordPress theme + components + SEO foundations.</span></li>
+        <li><strong>Optimize</strong><span>CWV audits, experimentation, analytics-informed iteration.</span></li>
+      </ol>
+    </section>
+
+    <section id="playground" class="section container reveal" aria-labelledby="playground-title">
+      <h2 id="playground-title">Interactive Playground</h2>
+      <p class="section-intro">Drag the orb into the target ring to unlock a hidden message.</p>
+      <div class="playground-wrap">
+        <div id="dragOrb" class="orb" draggable="true" aria-label="Draggable orb"></div>
+        <div id="dropZone" class="drop-zone" aria-label="Drop zone"></div>
+      </div>
+      <p id="easterEgg" class="easter">✨ Hidden mode unlocked: “Experimentation = Differentiation.”</p>
+    </section>
+
+    <section id="blog" class="section container reveal" aria-labelledby="blog-title">
+      <h2 id="blog-title">Insights</h2>
+      <div class="grid three">
+        <article class="card blog-card"><h3>How to Build Heavy 3D Without Killing Performance</h3><p>Practical budgets for geometry, textures, and hydration.</p></article>
+        <article class="card blog-card"><h3>WordPress SEO Architecture for 2026</h3><p>Entity clusters, schema strategy, and internal link graphs.</p></article>
+        <article class="card blog-card"><h3>Motion Design That Improves Conversion</h3><p>Using animation to guide intent and reduce decision friction.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container reveal" aria-labelledby="contact-title">
+      <h2 id="contact-title">Ready to Build Something Unforgettable?</h2>
+      <p class="section-intro">Tell me your audience, business goals, and timeline — I’ll map the creative + technical roadmap.</p>
+      <div class="contact-actions">
+        <a href="mailto:hello@example.com" class="btn btn-primary magnetic">Book Discovery Call</a>
+        <a href="#projects" class="btn btn-outline magnetic">Review Work First</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© 2026 AstraForge — premium WordPress experiences engineered for growth.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
