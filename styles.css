@@ -140,10 +140,10 @@ h1 { font-size: clamp(2rem, 5vw, 4.2rem); max-width: 15ch; margin: 0; }
 
 .footer { border-top: 1px solid var(--line); color: var(--muted); padding: 2rem 0 3rem; }
 
-/* Keep content visible by default; only hide when JS is active. */
+/* Keep content visible by default. JS opts-in with .reveal-pending per element. */
 .reveal { opacity: 1; transform: none; }
-html.js .reveal { opacity: 0; transform: translateY(20px); }
-html.js .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
+.reveal.reveal-pending { opacity: 0; transform: translateY(20px); }
+.reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
 
 @media (max-width: 1024px) {
   .grid.three { grid-template-columns: repeat(2, minmax(0,1fr)); }

@@ -1,5 +1,4 @@
 const doc = document.documentElement;
-doc.classList.add('js');
 const themeToggle = document.getElementById('themeToggle');
 const themeText = document.querySelector('.theme-text');
 const loadingScreen = document.getElementById('loadingScreen');
@@ -39,16 +38,21 @@ menuToggle?.addEventListener('click', () => {
 // reveal animations
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
+  revealEls.forEach((el) => el.classList.add('reveal-pending'));
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('in');
+      entry.target.classList.remove('reveal-pending');
       observer.unobserve(entry.target);
     });
   }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
   revealEls.forEach((el) => io.observe(el));
 } else {
-  revealEls.forEach((el) => el.classList.add('in'));
+  revealEls.forEach((el) => {
+    el.classList.remove('reveal-pending');
+    el.classList.add('in');
+  });
 }
 
 // magnetic buttons
